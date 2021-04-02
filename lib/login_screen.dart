@@ -1,3 +1,5 @@
+import 'package:chat_stp/Database/auth.dart';
+import 'package:chat_stp/Home.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -6,6 +8,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController usernamecont = TextEditingController();
+  TextEditingController emailcont = TextEditingController();
+  TextEditingController passwordcont = TextEditingController();
+  AuthServices authServices =AuthServices();
   // if true -> login page
   // if false -> sign up page
   bool isLogin = true;
@@ -43,16 +49,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 10.0,),
                 isLogin ? SizedBox(): TextFormField(
+                  controller: usernamecont,
                   decoration: InputDecoration(
                       hintText: "Username"
                   ),
                 ),
                 TextFormField(
+                  controller: emailcont,
                  decoration: InputDecoration(
                    hintText: "Email"
                  ),
                 ),
                 TextFormField(
+                  obscureText: true,
+                  controller: passwordcont,
                   decoration: InputDecoration(
                       hintText: "Password"
                   ),
@@ -60,7 +70,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 Center(
                   child: isLogin ? RaisedButton(
                     // START THIS IS THE ONPRESSED FUN FOR LOGIN
-                    onPressed: (){},
+                    onPressed: ()async{
+                     var result= await authServices.signinWithEmailandPassword(emailcont.text, passwordcont.text);
+                     if(result != null)
+                       {
+                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
+                       }
+                     else
+                       {
+                         print("Error");
+                       }
+                    },
                     // END THIS IS THE ONPRESSED FUN FOR LOGIN
                     color: Colors.blue,
                     child: Text(
@@ -71,7 +91,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ) : RaisedButton(
                     // START THIS IS THE ONPRESSED FUN FOR Sign Up
-                    onPressed: (){},
+                    onPressed: ()async{
+                      var result =await authServices.regWithEmailandPassword(emailcont.text, passwordcont.text);
+                      if(result != null)
+                        {
+                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
+                        }
+                    },
                     // END THIS IS THE ONPRESSED FUN FOR Sign up
                     color: Colors.blue,
                     child: Text(
