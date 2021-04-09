@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1039852311732",
-    "project_id": "chat-stp-f069d",
-    "storage_bucket": "chat-stp-f069d.appspot.com"
+    "project_number": "5298656947",
+    "project_id": "chat-stp-21",
+    "storage_bucket": "chat-stp-21.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1039852311732:android:bb804f9e4c559b8093f3e1",
+        "mobilesdk_app_id": "1:5298656947:android:725ea4b10e36f86f8982c6",
         "android_client_info": {
           "package_name": "com.ihabtech.chat_stp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1039852311732-850j51rpmqi8mvusrmhmv47jeangsct0.apps.googleusercontent.com",
+          "client_id": "5298656947-m6bsgcor8p0o3qh6lhgtqomd6kalg70i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCVvVx5hXpwKqU8pWKiwbzjLFfbuMKtUD8"
+          "current_key": "AIzaSyC9vhteBskiPYoOFjnXAVjftfrgmwHQpTo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1039852311732-850j51rpmqi8mvusrmhmv47jeangsct0.apps.googleusercontent.com",
+              "client_id": "5298656947-m6bsgcor8p0o3qh6lhgtqomd6kalg70i.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
