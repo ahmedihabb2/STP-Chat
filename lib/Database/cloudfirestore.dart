@@ -11,4 +11,9 @@ async{
      "About" : "Hey i am using STP Chat"
    });
 }
+
+Future getUserByName(username) async{
+  return _users.where("Username", isEqualTo: username).get();
+}
+
 }

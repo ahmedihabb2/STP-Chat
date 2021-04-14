@@ -1,3 +1,5 @@
+import 'package:chat_stp/search_screen.dart';
+import 'package:chat_stp/user_profile.dart';
 import 'package:flutter/material.dart';
 
 import 'Database/auth.dart';
@@ -10,6 +12,17 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => UserProfile()),
+              );
+            },
+          )
+        ],
       ),
       body: Center(
         child: RaisedButton(
@@ -20,6 +33,17 @@ class Home extends StatelessWidget {
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.search),
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+               builder:(context) => SearchScreen(),
+            ),
+          );
+        },
       ),
     );
   }
